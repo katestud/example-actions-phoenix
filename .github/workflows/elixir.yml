@@ -37,6 +37,4 @@ jobs:
 
     steps:
       - uses: actions/heroku@master
-      - run: git push heroku master
-
-      # - run: container:push -a calm-fortress-1234 web
+      - run: container:push -a example-actions-phoenix web
