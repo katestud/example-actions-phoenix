@@ -38,6 +38,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1.0.0
+      - run: |+
+          cat >~/.netrc <<EOF
+          machine api.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_TOKEN
+          machine git.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_TOKEN
+          EOF
       - run: pwd
       - run: git status
       - run: git log
