@@ -31,10 +31,13 @@ jobs:
   release:
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
     runs-on: ubuntu-latest
 
     needs: test
 
     steps:
-      - uses: actions/heroku@master
-      - run: heroku container:push -a example-actions-phoenix web
+      - uses: actions/checkout@v1.0.0
+      - run: cp $GITHUB_WORKSPACE/.github/heroku/.netrc ~/.netrc
+      - run: pwd
+      - run: git push heroku master
