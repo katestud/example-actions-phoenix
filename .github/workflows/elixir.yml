@@ -31,10 +31,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
+    needs: test
+
     steps:
+      - run: echo "hi"
       # - name: My deploy step
       #   env:
       #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      - uses: actions/heroku@master
-      - run: container:login
-      - run: container:push -a calm-fortress-1234 web
+      # - uses: actions/heroku@master
+      # - run: container:login
+      # - run: container:push -a calm-fortress-1234 web
