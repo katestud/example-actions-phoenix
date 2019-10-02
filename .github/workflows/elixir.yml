@@ -50,6 +50,5 @@ jobs:
       - run: cat ~/.netrc
       - run: git status
       - run: git log
-      - run: heroku git:remote -a example-actions-phoenix
-      # - run: git remote add heroku https://git.heroku.com/example-actions-phoenix.git
+      - run: heroku git:remote -a $(basename $GITHUB_REPOSITORY)
       - run: git push heroku HEAD:refs/heads/master
