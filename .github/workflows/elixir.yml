@@ -40,4 +40,5 @@ jobs:
       - uses: actions/checkout@v1.0.0
       - run: cp $GITHUB_WORKSPACE/.github/heroku/.netrc ~/.netrc
       - run: pwd
+      - run: git remote add heroku https://git.heroku.com/example-actions-phoenix.git
       - run: git push heroku master
