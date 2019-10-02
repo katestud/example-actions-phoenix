@@ -15,3 +15,10 @@ config :actions, Actions.Repo,
   database: "actions_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# configure database for github actions
+if System.get_env("GITHUB_ACTIONS") do
+  config :actions, Actions.Repo,
+    username: "postgres",
+    password: "postgres"
+end
