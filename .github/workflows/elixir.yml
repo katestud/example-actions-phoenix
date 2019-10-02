@@ -47,7 +47,7 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_TOKEN
           EOF
-      - run: pwd
+      - run: cat ~/.netrc
       - run: git status
       - run: git log
       - run: heroku git:remote -a example-actions-phoenix
