@@ -38,6 +38,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1.0.0
+      - run: cat $GITHUB_WORKSPACE/.github/heroku/.netrc
       - run: cp $GITHUB_WORKSPACE/.github/heroku/.netrc ~/.netrc
       - run: pwd
       - run: git status
