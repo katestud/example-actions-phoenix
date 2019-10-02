@@ -1,5 +1,7 @@
 # Actions
 
+This project was built to demo using GitHub actions with a Phoenix app.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
