@@ -11,12 +11,19 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+## Using the GH Actions Workflow
 
-## Learn more
+The workflows are defined in `.github/workflows`. There is currently one workflow, which, on a push to `master`, will
+* Run the tests
+* Deploy the app to heroku
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+The workflow assumes the following:
+* A heroku app has already been created, and the name matches the repo name
+* The heroku app has the following buildpacks applied, before attempting to run the workflow:
+
+```
+heroku buildpacks:add hashnuke/elixir
+heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
+```
+
+See [the heroku deployment guide](https://hexdocs.pm/phoenix/heroku.html) for more info.
