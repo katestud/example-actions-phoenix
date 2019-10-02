@@ -43,4 +43,4 @@ jobs:
       - run: git status
       - run: git log
       - run: git remote add heroku https://git.heroku.com/example-actions-phoenix.git
-      - run: git push heroku master
+      - run: git push heroku HEAD:master
