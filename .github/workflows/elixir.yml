@@ -37,11 +37,6 @@ jobs:
 
     steps:
       - uses: actions/heroku@master
-      - run: echo "hi"
-      - run: heroku login
-      # - name: My deploy step
-      #   env:
-      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      # - uses: actions/heroku@master
-      # - run: container:login
+      - run: git push heroku master
+
       # - run: container:push -a calm-fortress-1234 web
