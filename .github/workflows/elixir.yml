@@ -32,9 +32,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: My deploy step
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        - uses: actions/heroku@master
-        - run: container:login
-        - run: container:push -a calm-fortress-1234 web
+      # - name: My deploy step
+      #   env:
+      #     HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      - uses: actions/heroku@master
+      - run: container:login
+      - run: container:push -a calm-fortress-1234 web
