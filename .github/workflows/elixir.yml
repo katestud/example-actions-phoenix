@@ -47,8 +47,6 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
-      - run: cat ~/.netrc
-      - run: git status
-      - run: git log
       - run: heroku git:remote -a $(basename $GITHUB_REPOSITORY)
+      - run: heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
       - run: git push heroku HEAD:refs/heads/master
