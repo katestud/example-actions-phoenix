@@ -15,7 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :actions, ActionsWeb.Endpoint,
   load_from_system_env: true,
-  url: [scheme: "https", host: "example_actions_phoenix", port: 443],
+  url: [scheme: "https", host: "example_actions_phoenix.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
