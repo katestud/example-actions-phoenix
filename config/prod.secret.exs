@@ -9,9 +9,6 @@ config :actions, ActionsWeb.Endpoint,
 # Configure your database
 config :actions, Actions.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("PROD_DB_USERNAME"),
-  password: System.get_env("PROD_DB_PASSWORD"),
-  database: System.get_env("PROD_DB_NAME"),
-  hostname: System.get_env("PROD_DB_HOST"),
+  url: System.get_env("DATABASE_URL"),
   size: 20 # The amount of database connections in the pool
 
