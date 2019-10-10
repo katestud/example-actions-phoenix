@@ -16,6 +16,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 The workflows are defined in `.github/workflows`. There is currently one workflow, which, on a push to `master`, will
 * Run the tests
 * Deploy the app to heroku
+* Ensure migrations are run
 
 The workflow assumes the following:
 * A heroku app has already been created, and the name matches the repo name
