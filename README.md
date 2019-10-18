@@ -1,8 +1,8 @@
 # Actions
 
-This project was built to demo using GitHub actions with a Phoenix app.
+This project was built to demo using GitHub Actions with a Phoenix app. This app is just a vanilla Phoenix app and doesn't do much... yet.
 
-To start your Phoenix server:
+To start the Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
