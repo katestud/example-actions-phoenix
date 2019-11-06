@@ -47,6 +47,6 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
-      - run: heroku git:remote -a $(basename $GITHUB_REPOSITORY)
+      - run: heroku git:remote -a $(basename {{ github.repository}})
       - run: git push heroku HEAD:refs/heads/master
       - run: heroku run "POOL_SIZE=2 mix ecto.migrate"
